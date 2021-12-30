@@ -8,9 +8,9 @@ import (
 	"net/url"
 )
 
-func GetQuotes(token string, symbols string) {
+func GetQuotes(token string, symbols string, greeks string) {
 
-	apiUrl := "https://api.tradier.com/v1/markets/quotes?symbols=" + symbols + "&greeks=false"
+	apiUrl := "https://api.tradier.com/v1/markets/quotes?symbols=" + symbols + "&greeks=" + greeks
 
 	u, _ := url.ParseRequestURI(apiUrl)
 	urlStr := u.String()
