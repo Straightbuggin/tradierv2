@@ -6,18 +6,11 @@ import (
 	"log"
 	"net/http"
 	"net/url"
-	"strings"
 )
 
-func GetQuotes(token string, symbols ...[]string) {
+func GetQuotes(token string, symbols string) {
 
-	var lookup string
-
-	for _, symbol := range symbols {
-		lookup = strings.Join(symbol, ",")
-	}
-
-	apiUrl := "https://api.tradier.com/v1/markets/quotes?symbols=" + lookup + "&greeks=false"
+	apiUrl := "https://api.tradier.com/v1/markets/quotes?symbols=" + symbols + "&greeks=false"
 
 	u, _ := url.ParseRequestURI(apiUrl)
 	urlStr := u.String()
