@@ -1,4 +1,4 @@
-package tradier
+package tradierv2
 
 import (
 	"fmt"
